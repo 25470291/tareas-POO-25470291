@@ -1,60 +1,80 @@
 ﻿using System;
 
-namespace Clase_Pet
+namespace Clase_Phone
 {
-    class Mascota
+    class Telefono
     {
-        public string Color {  get; set;}
-        public string Nombre { get; set;}
-        public string Raza { get; set; }
-        public int Edad {  get; set;}
-        public string Sexo { get; set;}
+        public int Bateria;
+        public string Marca;
+        public string Modelo;
+        public string SistemaOperativo;
+        public int CapacidadRAM;
 
-
-        public void Jugar()
+        public void Llamar()
         {
-            Console.WriteLine($"{Nombre} esta jugando en el patio");
+            Console.WriteLine($"El {Marca} {Modelo} esta llamando ");
         }
 
-        public void Comer()
+        public void EnviarMensaje()
         {
-            Console.WriteLine($"{Nombre} esta comiendo");
+            Console.WriteLine($"El {Modelo} esta haciendo una llamada");
         }
 
-        public void Correr ()
+        public void TomarFoto()
         {
-            Console.WriteLine($"{Nombre} esta corriendo"); 
+            Console.WriteLine($"El telefono tomo una foto con la camara");
         }
 
-        public void HacerSonido()
+        public void VerCarga()
         {
-            Console.WriteLine($"{Nombre} hace: guaau");
+            Bateria = 80;
+            Console.WriteLine($"El telefono tiene {Bateria} de bateria ");
         }
-        public void Info()
+
+        public void VerDatos()
         {
-            Console.WriteLine($"nombre: {Nombre}");
-            Console.WriteLine($"Edad: {Edad}");
-            Console.WriteLine($"Sexo: {Sexo}");
-            Console.WriteLine($"Raza: {Raza}");
+            Console.WriteLine($"Marca: {Marca}");
+            Console.WriteLine($"Modelo: {Modelo}");
+            Console.WriteLine($"Bateria: {Bateria}");
+            Console.WriteLine($"CapacidadRAM: {CapacidadRAM}");
+            Console.WriteLine($"Sistema Operativo: {SistemaOperativo}");
         }
-    }
-    internal class Program
-    {
-        static void Main(string[] args)
+        internal class Program
         {
-            Mascota mascota1 = new Mascota();
-            mascota1.Nombre = "Camila";
-            mascota1.Raza = "Mestiza";
-            mascota1.Sexo = "Hembra";
-            mascota1.Edad = 11;
+            static void Main(string[] args)
+            {
+                Telefono telefono1 = new Telefono();
+                telefono1.Marca = "Samsung";
+                telefono1.Modelo = "A36";
+                telefono1.SistemaOperativo = "Android 15";
+                telefono1.CapacidadRAM = 8;
+                telefono1.Bateria = 80;
 
-            mascota1.Info();
-            mascota1 .HacerSonido();
-            mascota1.Jugar();
-            mascota1.Comer();
-            mascota1.Correr();
+                telefono1.VerDatos();
+                telefono1.TomarFoto();
+                telefono1.VerCarga();
+                telefono1.Llamar();
+                telefono1.EnviarMensaje();
+                Console.WriteLine("__________________________________");
 
-            Console.ReadLine();
+                Telefono telefono2 = new Telefono();
+                telefono2.Marca = "Iphone";
+                telefono2.Modelo = "15 Pro Max";
+                telefono2.SistemaOperativo = "iOS";
+                telefono2.CapacidadRAM = 8;
+                telefono2.Bateria = 80;
+
+                telefono2.VerDatos();
+                telefono2.TomarFoto();
+                telefono2.VerCarga();
+                telefono2.Llamar();
+                telefono2.EnviarMensaje();
+
+
+
+                Console.ReadLine();
+
+            }
         }
     }
 }
