@@ -1,83 +1,60 @@
-using System;
+﻿using System;
 
-namespace Clase_student
+namespace Clase_Pet
 {
-    class Estudiante
+    class Mascota
     {
+        public string Color {  get; set;}
+        public string Nombre { get; set;}
+        public string Raza { get; set; }
+        public int Edad {  get; set;}
+        public string Sexo { get; set;}
 
-        public string Nombre;
-        public int Edad;
-        public string Apellido;
-        public int Matricula;
-        public int Semestre;
-        public string Carrera;
-        public int Nip;
 
-        public void Estudiar()
+        public void Jugar()
         {
-            Console.WriteLine($"Nombre: {Nombre} esta estudiando");
+            Console.WriteLine($"{Nombre} esta jugando en el patio");
         }
-        public void MostraHistorial()
-        {
-            Console.WriteLine($"Apellido: {Apellido}");
-            Console.WriteLine($"Edad {Edad}");
-            Console.WriteLine($"Carrera: {Carrera}");
-            Console.WriteLine($"Semestre: {Semestre}");
-            Console.WriteLine($"Matricula: {Matricula}");
-            Console.WriteLine($"Nip: {Nip}");
 
-        }
-        public void  EntrarPortal( int nipactual,int  nuevonip)
+        public void Comer()
         {
-            if (Nip == nipactual)
-            {
-                Nip = nuevonip;
-                Console.WriteLine("Se cambio el nip existosamente");
-            }
-            else
-            {
-                Console.WriteLine("Ha ingresado el Nip incorrecto");
-            }
-            
+            Console.WriteLine($"{Nombre} esta comiendo");
+        }
+
+        public void Correr ()
+        {
+            Console.WriteLine($"{Nombre} esta corriendo"); 
+        }
+
+        public void HacerSonido()
+        {
+            Console.WriteLine($"{Nombre} hace: guaau");
+        }
+        public void Info()
+        {
+            Console.WriteLine($"nombre: {Nombre}");
+            Console.WriteLine($"Edad: {Edad}");
+            Console.WriteLine($"Sexo: {Sexo}");
+            Console.WriteLine($"Raza: {Raza}");
         }
     }
-
     internal class Program
     {
         static void Main(string[] args)
         {
-            Estudiante estudiante1 = new Estudiante();
-            estudiante1.Nombre = "Sahory ";
-            estudiante1.Apellido = "Medina";
-            estudiante1.Edad = 18;
-            estudiante1.Carrera = "ing. en Tic´s";
-            estudiante1.Semestre = 2;
-            estudiante1.Nip = 091123;
-            estudiante1.Matricula = 25470291;
+            Mascota mascota1 = new Mascota();
+            mascota1.Nombre = "Camila";
+            mascota1.Raza = "Mestiza";
+            mascota1.Sexo = "Hembra";
+            mascota1.Edad = 11;
 
-            estudiante1.Estudiar();
-            estudiante1.MostraHistorial();
-            Console.WriteLine("Para entrar ingrese su nip actutal");
-            int nipactual = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ingrese su nuevo nip:");
-            int nuevonip = Convert.ToInt32(Console.ReadLine());
-            estudiante1.EntrarPortal(nipactual, nuevonip);
+            mascota1.Info();
+            mascota1 .HacerSonido();
+            mascota1.Jugar();
+            mascota1.Comer();
+            mascota1.Correr();
 
-            Estudiante estudiante2 = new Estudiante();
-            estudiante2.Nombre = "Tom";
-            estudiante2.Apellido = "Hiddleston";
-            estudiante2.Edad = 19;
-            estudiante2.Carrera = "Ing. Ambiental";
-            estudiante2.Semestre = 8;
-            estudiante2.Matricula = 219802;
-            estudiante2.Nip = 020721;
-            
-            estudiante2.Estudiar();
-            estudiante2.MostraHistorial();
-
-
-
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }
